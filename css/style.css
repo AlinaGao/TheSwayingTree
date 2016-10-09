@@ -1,0 +1,107 @@
+*{
+	margin: 0;padding: 0;
+}
+
+.trunk, .trunk div{
+	background: #7dc048;
+	width: 100px;
+	height: 10px;
+	border-radius: 4px;
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	margin-left: -10px;
+	-webkit-animation-name: rot; /*兼容低版本谷歌浏览器*/
+			animation-name: rot;
+	-webkit-animation-duration: 3s;
+			animation-duration: 3s;
+	-webkit-animation-direction: alternate; /*方向回转*/
+			animation-direction: alternate;
+	-webkit-animation-iteration-count: infinite; /*循环*/
+			animation-iteration-count: infinite;
+	-webkit-transform-origin: 5px 5px;	/*基点 x轴和y轴*/
+			transform-origin: 5px 5px;
+	-webkit-animation-timing-function: ease-in-out;
+			animation-timing-function: ease-in-out;
+}
+
+.trunk{
+	-webkit-animation-name: rot-root;
+			animation-name: rot-root;
+}
+
+.trunk > div, .trunk div > div{
+	top: 0%;
+	left: 100px;
+	-webkit-animation-duration: calc(inherit/2); /*inhert表示继承父级的属性*/
+			animation-duration: calc(inherit/2);
+}
+.trunk > div:nth-child(2), .trunk div > div:nth-child(2){
+	-webkit-animation-name: rot-inv;
+			animation-name: rot-inv;
+	-webkit-animation-duration: 3s;
+			animation-duration: 3s;
+}
+
+@-webkit-@keyframes rot{
+	from{
+		-webkit-transform: rotate(15deg) scale(0.72);
+				transform: rotate(15deg) scale(0.72);
+		}
+	to{
+		-webkit-transform: rotate(45deg) scale(0.72);
+				transform: rotate(45deg) scale(0.72);
+	}
+}
+@keyframes rot{
+	from{
+		-webkit-transform: rotate(15deg) scale(0.72);
+				transform: rotate(15deg) scale(0.72);
+		}
+	to{
+		-webkit-transform: rotate(45deg) scale(0.72);
+				transform: rotate(45deg) scale(0.72);
+	}
+}
+@-webkit-@keyframes rot-inv{
+	from{
+		-webkit-transform: rotate(-45deg) scale(0.72);
+				transform: rotate(-45deg) scale(0.72);
+		}
+	to{
+		-webkit-transform: rotate(-15deg) scale(0.72);
+				transform: rotate(-15deg) scale(0.72);
+	}
+}
+@keyframes rot-inv{
+	from{
+		-webkit-transform: rotate(-45deg) scale(0.72);
+				transform: rotate(-45deg) scale(0.72);
+		}
+	to{
+		-webkit-transform: rotate(-15deg) scale(0.72);
+				transform: rotate(-15deg) scale(0.72);
+	}
+}
+
+@-webkit-@keyframes rot-root{
+	from{
+		-webkit-transform: rotate(-95deg) scale(0.72);
+				transform: rotate(-95deg) scale(0.72);
+		}
+	to{
+		-webkit-transform: rotate(-85deg) scale(0.72);
+				transform: rotate(-85deg) scale(0.72);
+	}
+}
+@keyframes rot-root{
+	from{
+		-webkit-transform: rotate(-95deg) scale(0.72);
+				transform: rotate(-95deg) scale(0.72);
+		}
+	to{
+		-webkit-transform: rotate(-85deg) scale(0.72);
+				transform: rotate(-85deg) scale(0.72);
+	}
+}
+
